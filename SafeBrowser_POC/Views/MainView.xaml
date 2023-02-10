@@ -1,0 +1,120 @@
+﻿<UserControl x:Class="SafeBrowser_POC.Views.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             xmlns:cm="http://caliburnmicro.com"
+             xmlns:local="clr-namespace:SafeBrowser_POC.Views"
+             mc:Ignorable="d" 
+             Background="Transparent"
+             d:DesignHeight="600" d:DesignWidth="920">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <!-- Navigation menu-->
+        <Border CornerRadius="10,0,0,10"
+                Grid.Column="0">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0.7">
+                    <GradientStop Color="{StaticResource secondaryBackColor1}" Offset="0"></GradientStop>
+                    <GradientStop Color="{StaticResource secondaryBackColor2}" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Border.Background>
+            <StackPanel >
+                <StackPanel Orientation="Horizontal"
+                            Height="85"
+                            Margin="0,0,0,10">
+                    <Image Source="/Images/Fotter logo.png"  
+                           VerticalAlignment="Top" 
+                           HorizontalAlignment="Center"   
+                           Height="60"
+                            />
+
+                </StackPanel>
+
+                <RadioButton Tag="{StaticResource color1}"
+                             IsChecked="True"
+                             Style="{StaticResource menuButton}"
+                             x:Name="LoadHome" >
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="Home" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Home" Style="{StaticResource menuButtonText}"/>
+                    </StackPanel>
+                </RadioButton>
+
+                <RadioButton  Style="{StaticResource menuButton}"
+                              Tag="{StaticResource color1}"
+                              x:Name="LoadConfig">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="Gear" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Config" Style="{StaticResource menuButtonText}"/>
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton Style="{StaticResource menuButton}"
+                             Tag="{StaticResource color1}"
+                             x:Name="LoadAbout">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="CircleInfo" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="About" Style="{StaticResource menuButtonText}"/>
+                    </StackPanel>
+                </RadioButton>
+
+            </StackPanel>
+        </Border>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackPanel  x:Name="pnlControlStatus"
+                            Grid.Row="0"
+                            Orientation="Horizontal"
+                            FlowDirection="RightToLeft"
+                            Background="Transparent"
+                            Margin="0,0,5,0">
+                <Border CornerRadius="0,10,10,0" Background="Transparent">
+
+                    <StackPanel Orientation="Horizontal"
+                                Width="717"
+                                FlowDirection="RightToLeft">
+                        <Button  Style="{StaticResource controlButton}"
+                                 Tag="{StaticResource color4}" 
+                                 Margin="6 0 0 0"
+                                 Width="40" Height="40">
+                            <fa:IconImage Icon="Refresh" Height="15" Width="15" 
+                                          Style="{StaticResource controlButtonIcon}" />
+                        </Button>
+
+                        <fa:IconImage Icon="Globe" 
+                                      Width="75" 
+                                      Height="20"
+                                      Foreground="Green"  
+                                      Style="{StaticResource controlButtonIcon}" />
+                        <Label Height="25" Content="Connection status" />
+                    </StackPanel>
+
+                </Border>
+            </StackPanel>
+            <Border CornerRadius="0,10,10,0"
+                    Grid.Row="1">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
+                        <GradientStop Color="{StaticResource primaryBackColor1}" Offset="0"></GradientStop>
+                        <GradientStop Color="{StaticResource primaryBackColor2}" Offset="1"></GradientStop>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <ContentControl 
+                            Margin="0"
+                            x:Name="ActiveItem"
+                            />
+            </Border>
+
+        </Grid>
+
+    </Grid>
+</UserControl>

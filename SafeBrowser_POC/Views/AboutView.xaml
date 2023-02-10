@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="SafeBrowser_POC.Views.AboutView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SafeBrowser_POC.Views"
+             mc:Ignorable="d"
+             Background="Transparent"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel Margin="15,5,5,5">
+
+            <TextBlock Text="About Kiddoware"
+                   Foreground="{StaticResource plainTextColor1}"
+                   FontSize="28"
+                   HorizontalAlignment="Left"
+                   Margin="0,0,0,20"
+                   FontFamily="/Fonts/#Poppins"/>
+            <TextBlock Width="480" 
+                       Height="50"
+                       Foreground="{StaticResource plainTextColor1}"
+                       FontSize="14"
+                       IsEnabled="False"
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center"
+                       FontFamily="/Fonts/#Poppins"                       
+                       Text="Kiddoware is the leading parental control solutions provider for mobile devices. "
+                       TextWrapping="Wrap" />
+            <TextBlock Width="480" 
+                       Height="50"
+                       Foreground="{StaticResource plainTextColor1}"
+                       FontSize="14"
+                       IsEnabled="False"
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center"
+                       FontFamily="/Fonts/#Poppins"                       
+                       Text="For support please contact at   "
+                       TextWrapping="Wrap" />
+            <TextBlock  FontSize="14"
+                       IsEnabled="False"
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center"> 
+                <Hyperlink NavigateUri="https://kiddoware.com" 
+                           RequestNavigate="Hyperlink_RequestNavigate">support@kiddoware.com</Hyperlink>
+            </TextBlock>
+            <TextBlock Width="480" 
+                       Height="40"
+                       Foreground="{StaticResource plainTextColor1}"
+                       FontSize="14"
+                       IsEnabled="False"
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center"
+                       FontFamily="/Fonts/#Poppins"                       
+                       Text=" or visit "
+                       TextWrapping="Wrap" />
+            <TextBlock  FontSize="14"
+                       IsEnabled="False"
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center"> 
+                <Hyperlink NavigateUri="https://kiddoware.com" 
+                           RequestNavigate="Hyperlink_RequestNavigate">https://kiddoware.com</Hyperlink>
+            </TextBlock>
+
+        </StackPanel>
+    </Grid>
+</UserControl>
